@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import './app.css'
 import './componentes/tasks'
+import './componentes/addtask'
 import Tasks from "./componentes/tasks";
+import AddTask from "./componentes/addtask";
 
 const App = () => {
   // let message = 'SAY MY NAME';
@@ -14,9 +16,18 @@ const App = () => {
   
 ])
 
+const HandleTaskAddition = (TaskTitle) =>{
+  const newTasks = [...tasks,{
+    title: tasks.title,
+    id:Math.random(10),
+    completed: false,
+  }];
+  setTasks(newTasks)
+}
   return(
     <div className = "container"> {<Tasks tasks = {tasks}></Tasks>}
-    <button onClick={() => setTasks("Heisenberg")}>Mudar mensagem</button>
+    <AddTask HandleTaskAddition={HandleTaskAddition}/>
+    {/* <button onClick={() => setTasks("Heisenberg")}>Mudar mensagem</button> */}
     
     </div>)
 };

@@ -1,10 +1,11 @@
 import React from 'react';
+import './taskDesign.css'
 
 
 const Task = ({task}) => {
-    return ( <h1>
+    return ( <div className='taskcontainer'>
         {task.title}
-    </h1> );
+    </div> );
 }
  
 export default Task;

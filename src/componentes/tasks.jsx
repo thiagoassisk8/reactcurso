@@ -1,5 +1,5 @@
 import React from 'react';
-import './task'
+import './task.jsx'
 import Task from './task';
 // import './app.css'
 
